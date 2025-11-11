@@ -5,7 +5,7 @@ Deadline: 12.11.2025 23:59
 This is the fourth exercise, and it is concerned with input/output, exceptions and python package management.
 
 ## Step 1
-Clone this repository to your local computer. On the command line, you would use the following command: `git clone https://github.com/IDH-Cologne-Deep-Learning-Uebung/exercise-04`.
+Clone this repository to your local computer. On the command line, you would use the following command: `git clone https://github.com/Deep-Learning-UE-WS2526/exercise-04`.
 
 ## Step 2
 Create a new branch in the repository, named after your UzK-account: `git checkout -b "UZKACCOUNT"`
