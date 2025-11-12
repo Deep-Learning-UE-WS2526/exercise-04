@@ -1,4 +1,4 @@
-# io.py
+
 from pathlib import Path
 
 INPUT = Path("wiki.txt")
@@ -8,12 +8,12 @@ OUT_APRIL = Path("april.txt")
 ARTICLES = ("Der", "Die", "Das")
 
 def read_lines(path: Path) -> list[str]:
-    """Liest wiki.txt als UTF-8 und gibt getrimmte, nicht-leere Zeilen zurück."""
+    
     with path.open("r", encoding="utf-8") as f:
         return [line.strip() for line in f if line.strip()]
 
 def write_lines(path: Path, lines: list[str]) -> None:
-    """Schreibt eine Zeile pro Satz, UTF-8, sauberes Zeilenende."""
+    
     with path.open("w", encoding="utf-8", newline="\n") as f:
         if lines:
             f.write("\n".join(lines) + "\n")
@@ -31,16 +31,16 @@ def main() -> None:
         print("Kodierungsfehler beim Lesen von wiki.txt (erwarte UTF-8).")
         return
 
-    # 1) < 30 Zeichen
+    
     short_sentences = [s for s in sentences if len(s) < 30]
 
-    # 2) beginnt mit Der/Die/Das (exakte Großschreibung)
+   
     article_sentences = [s for s in sentences if s.startswith(ARTICLES)]
 
-    # 3) enthält 'April' (case-sensitiv gemäß Aufgabenbeschreibung)
+    
     april_sentences = [s for s in sentences if "April" in s]
 
-    # schreiben
+   
     write_lines(base / OUT_SHORT, short_sentences)
     write_lines(base / OUT_ARTICLES, article_sentences)
     write_lines(base / OUT_APRIL, april_sentences)
